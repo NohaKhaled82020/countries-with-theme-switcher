@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Font-Awesome";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url("~/assets/fonts/fontawesome-light.woff2") format("woff2");
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--bgColor);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+a,
+input,
+button,
+select {
+  transition: 0.3s;
+}
+
+.global-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .main-content {
+    flex: 1;
+  }
+}
+
+.container {
+  width: 100% !important;
+  max-width: 1300px !important;
+}
+.page {
+  margin: 60px 0;
+}

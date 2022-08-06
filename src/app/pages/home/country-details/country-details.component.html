@@ -1,0 +1,48 @@
+<div class="page">
+  <div class="container">
+    <div class="details">
+      <div class="details__header">
+        <a class="btn" routerLink="/">
+          <i class="back-icon"></i>
+          Back
+        </a>
+      </div>
+      <div class="details__content">
+        <img src="{{ country.flag }}" alt="country image" />
+        <div class="details__right">
+          <h2>{{ country.name }}</h2>
+          <div class="details__info">
+            <p><span>Native Name: </span> {{ country.nativeName }}</p>
+            <p><span>Population: </span> {{ country.population }}</p>
+            <p><span>Region: </span>{{ country.region }}</p>
+            <p><span>Sub Region: </span>{{ country.subregion }}</p>
+            <p><span>Capital: </span>{{ country.capital }}</p>
+            <p>
+              <span>Top Level Domain: </span>{{ country.topLevelDomain[0] }}
+            </p>
+            <p><span>Currencies: </span>{{ country.currencies[0].code }}</p>
+            <p>
+              <span>Languages: </span>
+              <ng-container *ngFor="let lang of country.languages">
+                {{ lang.name }},
+              </ng-container>
+            </p>
+          </div>
+          <div class="details__borders" *ngIf="country.borders?.length">
+            <p>Border Countries:</p>
+            <div class="details__items">
+              <ng-container *ngFor="let border of country.borders">
+                <a
+                  class="btn"
+                  title="{{ border }}"
+                  (click)="getCodeDetails(border)"
+                  >{{ border }}</a
+                >
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

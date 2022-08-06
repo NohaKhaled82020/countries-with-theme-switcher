@@ -1,0 +1,43 @@
+<div class="page home">
+  <div class="container">
+    <div class="home__heading">
+      <div class="home__right">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search for a country...."
+          [(ngModel)]="searchValue"
+          (change)="search()"
+        />
+        <i class="search-icon"></i>
+      </div>
+      <div class="home__left">
+        <select
+          (change)="selectCountry($event.target)"
+          class="form-control"
+          placeholder="Filter By region"
+        >
+          <option selected>Filter By region</option>
+          <option *ngFor="let region of regions" [value]="region">
+            {{ region }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="home__content">
+      <div
+        class="card"
+        *ngFor="let country of countries"
+        [routerLink]="['/country', country.name]"
+      >
+        <img src="{{ country.flag }}" alt="{{ country.name }}" />
+        <div class="card__content">
+          <h3>{{ country.name }}</h3>
+          <p><span>Population:</span> {{ country.population }}</p>
+          <p><span>Region:</span> {{ country.region }}</p>
+          <p><span>Capital:</span> {{ country.capital }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

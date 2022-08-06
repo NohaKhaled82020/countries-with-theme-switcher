@@ -1,0 +1,56 @@
+.home__heading {
+  display: flex;
+  margin: 20px 0 50px;
+  @include maxBreakpoint($mobilexLarge) {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+}
+.home__right {
+  position: relative;
+  margin-inline-end: auto;
+  width: 100%;
+  max-width: 400px;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: var(--textColor);
+  }
+}
+.home__left {
+  width: 100%;
+  max-width: 200px;
+}
+.home__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 60px;
+}
+.card {
+  border: 0;
+  cursor: pointer;
+  background-color: var(--elemColor);
+  color: var(--textColor);
+  box-shadow: var(--shadow);
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+.card__content {
+  padding: 30px 30px 40px;
+  h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 14px;
+    span {
+      font-weight: bold;
+    }
+  }
+}

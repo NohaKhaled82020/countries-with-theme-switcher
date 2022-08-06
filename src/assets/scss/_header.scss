@@ -1,0 +1,17 @@
+header {
+  padding: 15px 0;
+  background-color: var(--elemColor);
+  color: var(--textColor);
+  box-shadow: var(--shadow);
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  h1 {
+    margin-inline-end: auto;
+    font-size: 25px;
+    @include maxBreakpoint($mobilexLarge) {
+      font-size: 17px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.btn {
+  font-weight: 500;
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+  padding: 0px 30px;
+  height: 35px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  color: var(--textColor);
+  background-color: var(--elemColor);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--textColor);
+    background-color: var(--elemColor);
+    border: none;
+  }
+
+  &.btn-white {
+    box-shadow: none;
+    padding: 0;
+    @include maxBreakpoint($mobilexLarge) {
+      font-size: 13px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+%f-icon {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin-right: 10px;
+  &:before {
+    content: "";
+    display: inline-block;
+    font-family: "Font-Awesome";
+    font-weight: 300 !important;
+    font-style: normal !important;
+    font-size: inherit;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+  }
+}
+
+%fa-solid {
+  @extend %f-icon;
+  &:before {
+    font-weight: 800 !important;
+  }
+}
+.search-icon {
+  @extend %f-icon;
+  &:before {
+    content: "\f002";
+  }
+}
+.moon-icon {
+  @extend %fa-solid;
+  &:before {
+    content: "\f186";
+  }
+}
+.sun-icon {
+  @extend %fa-solid;
+  &:before {
+    content: "\f185";
+  }
+}
+.back-icon {
+  @extend %f-icon;
+  &:before {
+    content: "\f060";
+  }
+}

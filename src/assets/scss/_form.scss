@@ -1,0 +1,45 @@
+.form-control {
+  outline: 0;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  appearance: none;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  background-color: var(--elemColor);
+  color: var(--textColor);
+
+  &:focus {
+    box-shadow: var(--shadow);
+    background-color: var(--elemColor);
+    color: var(--textColor);
+    border: none;
+  }
+  &.ng-invalid.ng-touched {
+    border-color: $red;
+  }
+  &::placeholder {
+    padding-inline-start: 10px;
+  }
+  &::-webkit-input-placeholder {
+    padding-inline-start: 10px;
+  }
+  &::-moz-placeholder {
+    padding-inline-start: 10px;
+  }
+  &:-ms-input-placeholder {
+    padding-inline-start: 10px;
+  }
+  &:-moz-placeholder {
+    padding-inline-start: 10px;
+  }
+}
+input.form-control {
+  padding-inline-start: 45px;
+}
+select {
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right #ddd;
+  -webkit-appearance: none;
+  background-position-x: 94%;
+}

@@ -1,0 +1,25 @@
+.light-theme {
+  --bgColor: #fafafa;
+  --textColor: #111517;
+  --elemColor: #fff;
+  --inputColor: #858585;
+  --shadow: rgb(0 0 0 / 15%) 0px 0px 10px 0px;
+}
+.dark-theme {
+  --bgColor: #202c37;
+  --textColor: #fff;
+  --elemColor: #2b3945;
+  --inputColor: #858585;
+  --shadow: rgb(0 0 0 / 15%) 0px 0px 10px 0px;
+}
+
+// Breakpoints
+$desktopLarge: 1440px;
+$desktopNormal: 1200px;
+$desktopSmall: 1024px;
+$tabletLarge: 991px;
+$tablet: 768px;
+$mobilexLarge: 640px;
+$mobileLarge: 426px;
+$mobileMedium: 375px;
+$mobileSmall: 320px;

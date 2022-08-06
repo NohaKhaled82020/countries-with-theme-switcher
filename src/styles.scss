@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  src: url("./assets/fonts/NunitoSans-Light.ttf");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 600;
+
+  src: url("./assets/fonts/NunitoSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 800;
+  src: url("./assets/fonts/NunitoSans-ExtraBold.ttf");
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+@import "./assets/scss/variables";
+@import "./assets/scss/mixins";
+@import "./assets/scss/buttons";
+@import "./assets/scss/form";
+@import "./assets/scss/icons";
+@import "./assets/scss/global";
+@import "./assets/scss/header";
+@import "./assets/scss/home";
+@import "./assets/scss/details";
