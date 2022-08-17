@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  lastValueFrom,
+  Subject,
+  switchMap,
+  tap,
+} from 'rxjs';
 import {
   countriesApi,
   countryApi,
@@ -15,7 +22,8 @@ import { ICountry } from '../ICountry.model';
 })
 export class HomeComponent implements OnInit {
   countries: ICountry[] = [];
-  searchValue: string = '';
+  searchTerm$ = new Subject<string>();
+
   regions = [
     'Africa',
     'Asia',
@@ -33,26 +41,34 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.dataService
-      .get(countriesApi)
-      .pipe(
+    lastValueFrom(
+      this.dataService.get(countriesApi).pipe(
         tap((res) => {
           this.countries = res;
         })
       )
-      .toPromise();
+    );
+    this.search();
   }
   search(): void {
-    this.loadingService.start();
-    this.dataService
-      .get(`${countryApi}/${this.searchValue}`)
-      .pipe(
+    lastValueFrom(
+      this.searchTerm$.pipe(
+        distinctUntilChanged(),
+        debounceTime(500),
+        switchMap((term) => {
+          this.loadingService.start();
+          if (term) {
+            return this.dataService.get(`${countryApi}/${term}`);
+          } else {
+            return this.dataService.get(countriesApi);
+          }
+        }),
         tap((res) => {
           this.loadingService.stop();
           this.countries = res;
         })
       )
-      .toPromise();
+    );
   }
   selectCountry(ev: any) {
     this.loadingService.start();

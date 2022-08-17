@@ -6,8 +6,8 @@
           type="text"
           class="form-control"
           placeholder="Search for a country...."
-          [(ngModel)]="searchValue"
-          (change)="search()"
+          (input)="searchTerm$.next(searchInput.value)"
+          #searchInput
         />
         <i class="search-icon"></i>
       </div>
